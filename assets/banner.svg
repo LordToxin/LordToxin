@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
+  <defs>
+    <!-- Dark Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08090f" />
+      <stop offset="50%" stop-color="#0c0e17" />
+      <stop offset="100%" stop-color="#05060a" />
+    </linearGradient>
+
+    <!-- Emerald-Cyan Accent Gradient -->
+    <linearGradient id="cyanEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Violet Accent Gradient -->
+    <linearGradient id="violetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8957e5" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" />
+      <circle cx="40" cy="40" r="1" fill="rgba(0, 245, 212, 0.15)" />
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="340" fill="url(#bgGrad)" rx="16" />
+  <rect width="1200" height="340" fill="url(#techGrid)" rx="16" />
+
+  <!-- Outer Tech Border -->
+  <rect x="1" y="1" width="1198" height="338" rx="15" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5" />
+  <path d="M 16 1 L 120 1" stroke="url(#cyanEmerald)" stroke-width="2" />
+  <path d="M 1 16 L 1 100" stroke="url(#cyanEmerald)" stroke-width="2" />
+  <path d="M 1184 339 L 1080 339" stroke="url(#violetGrad)" stroke-width="2" />
+  <path d="M 1199 324 L 1199 240" stroke="url(#violetGrad)" stroke-width="2" />
+
+  <!-- Top Metadata HUD -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Fira Code', monospace" font-size="11" fill="#64748b" letter-spacing="1">
+    <text x="36" y="40">SYSTEM // HYPERION-CORE-V3</text>
+    <text x="600" y="40" text-anchor="middle">STATUS: <tspan fill="#10b981">ONLINE [NOMINAL]</tspan> • LATENCY: &lt;14μs</text>
+    <text x="1164" y="40" text-anchor="end">NODE_ID // 0x68774253</text>
+    <line x1="36" y1="52" x2="1164" y2="52" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+  </g>
+
+  <!-- Main Headline Branding -->
+  <g transform="translate(60, 150)">
+    <!-- Accent Line -->
+    <rect x="0" y="-38" width="4" height="64" fill="url(#cyanEmerald)" rx="2" />
+    
+    <text x="24" y="-2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Plus Jakarta Sans', sans-serif" font-size="52" font-weight="900" fill="#f8fafc" letter-spacing="-1">
+      TOXIN
+    </text>
+    <text x="210" y="-4" font-family="'Fira Code', monospace" font-size="14" font-weight="600" fill="#00f5d4" letter-spacing="2">
+      // STAFF ARCHITECT
+    </text>
+
+    <!-- Subtitle -->
+    <text x="24" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="400" fill="#94a3b8">
+      Distributed Systems Engineering <tspan fill="#475569">|</tspan> Low-Latency Runtimes <tspan fill="#475569">|</tspan> Autonomous Tooling
+    </text>
+  </g>
+
+  <!-- Right Telemetry Panel -->
+  <g transform="translate(820, 95)">
+    <!-- Box Container -->
+    <rect width="340" height="150" rx="10" fill="rgba(16, 18, 27, 0.7)" stroke="rgba(255, 255, 255, 0.08)" />
+    
+    <!-- Header -->
+    <text x="16" y="26" font-family="'Fira Code', monospace" font-size="11" font-weight="600" fill="#00f5d4" letter-spacing="1">
+      CORE METRICS &amp; RADAR
+    </text>
+    <line x1="16" y1="36" x2="324" y2="36" stroke="rgba(255, 255, 255, 0.06)" />
+
+    <!-- Metric Rows -->
+    <g font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">
+      <text x="16" y="60">ARCH:</text>
+      <text x="120" y="60" fill="#f1f5f9">Zero-Copy / Async-First</text>
+
+      <text x="16" y="84">SYS RUNTIME:</text>
+      <text x="120" y="84" fill="#f1f5f9">Rust • C++20 • Go • Linux</text>
+
+      <text x="16" y="108">TELEMETRY:</text>
+      <text x="120" y="108" fill="#10b981">eBPF • AsyncIO • IPC</text>
+
+      <text x="16" y="132">ETHOS:</text>
+      <text x="120" y="132" fill="#8957e5">Mechanical Sympathy</text>
+    </g>
+  </g>
+
+  <!-- Bottom Coordinates & Ticker -->
+  <g font-family="'Fira Code', monospace" font-size="10" fill="#475569">
+    <line x1="36" y1="285" x2="1164" y2="285" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+    <text x="36" y="310">KERNEL: HARDENED_X86_64</text>
+    <text x="350" y="310">ALLOCATOR: JEMALLOC / MIMALLOC</text>
+    <text x="750" y="310">ENCRYPTION: AES-256-GCM / TLS 1.3</text>
+    <text x="1164" y="310" text-anchor="end">AUTONOMOUS DISPATCH: ACTIVE</text>
+  </g>
+</svg>

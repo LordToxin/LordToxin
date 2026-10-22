@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="boxBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11131f" />
+      <stop offset="100%" stop-color="#0b0d14" />
+    </linearGradient>
+    <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4" />
+      <stop offset="100%" stop-color="#8957e5" />
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1100" height="240" rx="12" fill="#08090f" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+
+  <!-- Section Title -->
+  <text x="32" y="34" font-family="'Fira Code', monospace" font-size="11" font-weight="700" fill="#00f5d4" letter-spacing="1.5">
+    TOPOLOGY // HIGH-CONCURRENCY DISTRIBUTED PIPELINE
+  </text>
+  <text x="1068" y="34" font-family="'Fira Code', monospace" font-size="10" fill="#64748b" text-anchor="end">
+    P99 LATENCY: 850μs • THROUGHPUT: 1.4M RPS
+  </text>
+  <line x1="32" y1="46" x2="1068" y2="46" stroke="rgba(255, 255, 255, 0.06)" />
+
+  <!-- Block 1: Edge & Ingress -->
+  <g transform="translate(32, 68)">
+    <rect width="210" height="140" rx="8" fill="url(#boxBg)" stroke="rgba(0, 245, 212, 0.3)" stroke-width="1" />
+    <rect x="0" y="0" width="210" height="28" rx="8" fill="rgba(0, 245, 212, 0.08)" />
+    <text x="16" y="19" font-family="'Fira Code', monospace" font-size="11" font-weight="700" fill="#00f5d4">1. EDGE INGRESS</text>
+    
+    <text x="16" y="54" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Anycast TLS 1.3</text>
+    <text x="16" y="74" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• Envoy / Cloudflare</text>
+    <text x="16" y="94" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• Zero-Trust mTLS</text>
+    <text x="16" y="114" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• DDoS &amp; Rate Limiter</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 242 138 L 290 138" stroke="url(#edgeGrad)" stroke-width="2" stroke-dasharray="4 4" />
+  <polygon points="292,138 284,134 284,142" fill="#8957e5" />
+
+  <!-- Block 2: Compute & Core Engine -->
+  <g transform="translate(300, 68)">
+    <rect width="230" height="140" rx="8" fill="url(#boxBg)" stroke="rgba(137, 87, 229, 0.35)" stroke-width="1" />
+    <rect x="0" y="0" width="230" height="28" rx="8" fill="rgba(137, 87, 229, 0.1)" />
+    <text x="16" y="19" font-family="'Fira Code', monospace" font-size="11" font-weight="700" fill="#8957e5">2. COMPUTE ENGINE</text>
+
+    <text x="16" y="54" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Rust / C++ / Async Python</text>
+    <text x="16" y="74" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• Epoll Event Loops</text>
+    <text x="16" y="94" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• SIMD Vectorization</text>
+    <text x="16" y="114" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• Zero-Copy Parsers</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 530 138 L 578 138" stroke="url(#edgeGrad)" stroke-width="2" stroke-dasharray="4 4" />
+  <polygon points="580,138 572,134 572,142" fill="#00f5d4" />
+
+  <!-- Block 3: State & Ring Buffers -->
+  <g transform="translate(588, 68)">
+    <rect width="220" height="140" rx="8" fill="url(#boxBg)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1" />
+    <rect x="0" y="0" width="220" height="28" rx="8" fill="rgba(16, 185, 129, 0.1)" />
+    <text x="16" y="19" font-family="'Fira Code', monospace" font-size="11" font-weight="700" fill="#10b981">3. STATE &amp; BUFFER</text>
+
+    <text x="16" y="54" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">In-Memory Subsystem</text>
+    <text x="16" y="74" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• Lock-Free Ring Buffers</text>
+    <text x="16" y="94" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• Redis 7 Clustered / WAL</text>
+    <text x="16" y="114" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• Shared Memory IPC</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 808 138 L 856 138" stroke="url(#edgeGrad)" stroke-width="2" stroke-dasharray="4 4" />
+  <polygon points="858,138 850,134 850,142" fill="#8957e5" />
+
+  <!-- Block 4: Storage & Telemetry -->
+  <g transform="translate(866, 68)">
+    <rect width="202" height="140" rx="8" fill="url(#boxBg)" stroke="rgba(245, 158, 11, 0.35)" stroke-width="1" />
+    <rect x="0" y="0" width="202" height="28" rx="8" fill="rgba(245, 158, 11, 0.1)" />
+    <text x="16" y="19" font-family="'Fira Code', monospace" font-size="11" font-weight="700" fill="#f59e0b">4. PERSISTENCE</text>
+
+    <text x="16" y="54" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Tiered Analytics</text>
+    <text x="16" y="74" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• Postgres (ACID / JSONB)</text>
+    <text x="16" y="94" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• ClickHouse (OLAP)</text>
+    <text x="16" y="114" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">• eBPF Kernel Tracing</text>
+  </g>
+</svg>
