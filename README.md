@@ -71,6 +71,7 @@ $ curl -s https://api.toxin.dev/bio
 
 | Project | Domain | Architecture | Status |
 | :--- | :--- | :--- | :--- |
+| **[`flux-css-mesh`](https://github.com/LordToxin/flux-css-mesh)** | Generative Web Studio | Canvas/CSS3, Tailwind generator, 4K export | `[Live Demo](https://lordtoxin.github.io/flux-css-mesh/)` |
 | **`pc_remote_bot`** | Automation / IoT | Python, Telegram API, Async event loops | `Production` |
 | **`BadgeFarmer`** | Systems & Automation | Multi-threaded client orchestration, process hooks | `Active` |
 | **`harmonix`** | Audio & Client Modding | Web engine injection, Custom hooks | `Stable` |
