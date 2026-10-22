@@ -1,6 +1,8 @@
 <div align="center">
 
-# `LordToxin` ⚡
+<img src="https://raw.githubusercontent.com/LordToxin/LordToxin/main/avatar.jpg" width="160" height="160" alt="Toxin" style="border-radius: 50%; box-shadow: 0 0 25px rgba(0, 245, 212, 0.35);" />
+
+# `Toxin` ⚡
 ### **Staff Systems & Full-Stack Architect | Product Engineer**
 
 [![GitHub followers](https://img.shields.io/github/followers/LordToxin?label=Followers&style=flat-square&color=238636&logo=github)](https://github.com/LordToxin)
